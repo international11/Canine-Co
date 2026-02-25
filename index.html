@@ -49,6 +49,8 @@
       --font-display: 'Playfair Display', 'Prompt', serif;
       --font-body: 'Noto Sans Thai', 'Prompt', sans-serif;
       --transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+      --cream-text-full: rgba(245, 240, 232, 1);
+      --cream-text-sub: rgba(245, 240, 232, 0.9);
     }
 
     /* ===== RESET & BASE ===== */
@@ -62,6 +64,8 @@
 
     html {
       scroll-behavior: smooth;
+      font-size: 170%;
+      /* เพิ่มขนาดตัวอักษรทั้งเว็บ +70% จากเดิม */
     }
 
     body {
@@ -153,8 +157,8 @@
     }
 
     .section-sub {
-      font-size: 1rem;
-      color: rgba(245, 240, 232, .6);
+      font-size: 1.1rem;
+      color: rgba(245, 240, 232, 0.9);
       margin-bottom: 40px;
     }
 
@@ -268,7 +272,7 @@
 
     .logo-tagline {
       font-size: 0.62rem;
-      color: rgba(245, 240, 232, .5);
+      color: rgba(245, 240, 232, 0.8);
       font-weight: 400;
       display: block;
       letter-spacing: 0.06em;
@@ -299,7 +303,7 @@
     }
 
     .search-wrap input::placeholder {
-      color: rgba(245, 240, 232, .4);
+      color: rgba(245, 240, 232, 0.65);
     }
 
     .search-btn {
@@ -309,7 +313,7 @@
       transform: translateY(-50%);
       background: none;
       border: none;
-      color: rgba(245, 240, 232, .5);
+      color: rgba(245, 240, 232, 1);
       padding: 0;
       display: flex;
       align-items: center;
@@ -333,9 +337,9 @@
       display: block;
       padding: 8px 14px;
       font-family: var(--font-body);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 500;
-      color: rgba(245, 240, 232, .7);
+      color: rgba(245, 240, 232, 0.9);
       border-radius: var(--radius-sm);
       transition: var(--transition);
       white-space: nowrap;
@@ -376,7 +380,7 @@
       gap: 8px;
       padding: 9px 14px;
       font-size: 0.88rem;
-      color: rgba(245, 240, 232, .7);
+      color: rgba(245, 240, 232, 1);
       border-radius: var(--radius-sm);
       transition: var(--transition);
     }
@@ -447,7 +451,7 @@
       font-family: var(--font-body);
       font-weight: 500;
       font-size: 0.95rem;
-      color: rgba(245, 240, 232, .7);
+      color: rgba(245, 240, 232, 1);
       border-radius: var(--radius-sm);
     }
 
@@ -584,10 +588,12 @@
     }
 
     .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      color: rgba(245, 240, 232, .65);
+      font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+      color: var(--white);
       margin-bottom: 32px;
       line-height: 1.8;
+      font-weight: 500;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .hero-ctas {
@@ -774,7 +780,7 @@
 
     .quick-sub {
       font-size: 0.76rem;
-      color: rgba(245, 240, 232, .5);
+      color: rgba(245, 240, 232, 0.85);
       text-align: center;
     }
 
@@ -801,7 +807,7 @@
       font-family: var(--font-body);
       font-size: 0.88rem;
       font-weight: 500;
-      color: rgba(245, 240, 232, .6);
+      color: rgba(245, 240, 232, 1);
       cursor: pointer;
       transition: var(--transition);
     }
@@ -978,7 +984,7 @@
       cursor: pointer;
       transition: var(--transition);
       flex-shrink: 0;
-      color: rgba(245, 240, 232, .5);
+      color: rgba(245, 240, 232, 0.9);
     }
 
     .btn-qr:hover {
@@ -1055,8 +1061,8 @@
     }
 
     .tool-desc {
-      font-size: 0.88rem;
-      color: rgba(245, 240, 232, .55);
+      font-size: 0.92rem;
+      color: rgba(245, 240, 232, 0.85);
       margin-bottom: 22px;
     }
 
@@ -1080,7 +1086,7 @@
       display: block;
       font-size: 0.82rem;
       font-weight: 600;
-      color: rgba(245, 240, 232, .6);
+      color: rgba(245, 240, 232, 0.9);
       margin-bottom: 5px;
     }
 
@@ -1116,7 +1122,7 @@
 
     .tool-result-label {
       font-size: 0.78rem;
-      color: rgba(245, 240, 232, .5);
+      color: rgba(245, 240, 232, 0.85);
       margin-bottom: 4px;
     }
 
@@ -1193,7 +1199,7 @@
 
     .newsletter-sub {
       font-size: 1rem;
-      color: rgba(245, 240, 232, .6);
+      color: rgba(245, 240, 232, 0.9);
       margin-bottom: 10px;
     }
 
@@ -1285,7 +1291,7 @@
 
     #footer {
       background: rgba(14, 30, 20, .8);
-      color: rgba(245, 240, 232, .75);
+      color: rgba(245, 240, 232, 1);
       padding: 60px 20px 30px;
     }
 
@@ -1321,7 +1327,7 @@
 
     .footer-brand-desc {
       font-size: 0.88rem;
-      color: rgba(245, 240, 232, .45);
+      color: rgba(245, 240, 232, 0.85);
       line-height: 1.7;
       margin-bottom: 20px;
     }
@@ -1342,7 +1348,7 @@
       transition: var(--transition);
       border: 1px solid rgba(196, 162, 101, .15);
       cursor: pointer;
-      color: rgba(245, 240, 232, .5);
+      color: rgba(245, 240, 232, 1);
     }
 
     .footer-social-btn:hover {
@@ -1369,7 +1375,7 @@
 
     .footer-links a {
       font-size: 0.88rem;
-      color: rgba(245, 240, 232, .45);
+      color: rgba(245, 240, 232, 1);
       transition: var(--transition);
     }
 
@@ -1383,7 +1389,7 @@
       border-radius: var(--radius-md);
       padding: 16px 18px;
       font-size: 0.82rem;
-      color: rgba(245, 240, 232, .5);
+      color: rgba(245, 240, 232, 0.85);
       line-height: 1.7;
     }
 
@@ -1404,7 +1410,7 @@
 
     .footer-copy {
       font-size: 0.82rem;
-      color: rgba(245, 240, 232, .3);
+      color: rgba(245, 240, 232, 0.6);
     }
 
     .footer-bottom-links {
@@ -1414,7 +1420,7 @@
 
     .footer-bottom-links a {
       font-size: 0.82rem;
-      color: rgba(245, 240, 232, .3);
+      color: rgba(245, 240, 232, 0.6);
       transition: var(--transition);
     }
 
@@ -1497,7 +1503,7 @@
 
     .modal-sub {
       font-size: 0.85rem;
-      color: var(--gray-text);
+      color: var(--brown-mid);
       margin-bottom: 20px;
     }
 
@@ -1788,8 +1794,8 @@
           เพื่อนซี้สี่ขา...<br /><span>ความสุขของบ้าน</span>
         </h1>
         <p class="hero-sub">
-          คัดสรรของใช้สัตว์เลี้ยงที่ดีที่สุด<br />
-          คัดสรรสินค้าสัตว์เลี้ยงคุณภาพ ส่งถึงบ้าน
+          อาหารสัตว์เลี้ยง สุนัขและแมว<br />
+          คัดสรรสินค้าสัตว์เลี้ยง ส่งถึงบ้าน
         </p>
         <div class="hero-ctas">
           <a href="#shop" class="btn-primary">
@@ -2245,117 +2251,70 @@
     const WEB3FORMS_ACCESS_KEY = '6e499759-0a64-42a8-81ba-cad79e6aa183';
 
     // Google Sheets Configuration
-    const SHEET_ID = '1TkKS_ZOR1uMlZ6yY3F-VAuVQLY92NBfAngWoj9VfecQ';
+    const SHEET_ID_DOG = '1RX-eXKpq8KbruOr7sNZlDy97rWLrW6hp45Fn7JCowDA'; // สุนัข
+    const SHEET_ID_CAT = '1OEMmWKqY78OWJWTl3iyV4irJuJLdwgQF4dumtBvXnLQ'; // แมว
+    const SHEET_ID_BIRD = '1g1ei_VGNMU7v0SU4ZyBXdR3Zvra5UPIBjTuCSc_vWrs'; // นก
+    const SHEET_ID_FISH = '1g1ECyAYEZd6PBTfv9JGsWEHkN8vskxt8K-aIMkWAIyg'; // ปลา
+    const SHEET_ID_OTHER = '1NN0wJC-VM8BZwI7B6kmcL32On6TmVum97OV9PELObPs'; // อื่นๆ
 
-    // ตั้งค่าชื่อชีท (ไม่ต้องใช้ gid)
     // หมายเหตุ: ค่า `sheet` ต้องตรงกับชื่อแท็บใน Google Sheets แบบเป๊ะ ๆ
+    // แต่ละ entry ระบุ sheetId เพื่อรองรับหลาย Spreadsheet
     const SHEET_CONFIGS = [
-      // สุนัข (dog - dog20)
-      { name: 'dog', sheet: 'dog', category: 'dog' },
-      { name: 'dog2', sheet: 'dog2', category: 'dog' },
-      { name: 'dog3', sheet: 'dog3', category: 'dog' },
-      { name: 'dog4', sheet: 'dog4', category: 'dog' },
-      { name: 'dog5', sheet: 'dog5', category: 'dog' },
-      { name: 'dog6', sheet: 'dog6', category: 'dog' },
-      { name: 'dog7', sheet: 'dog7', category: 'dog' },
-      { name: 'dog8', sheet: 'dog8', category: 'dog' },
-      { name: 'dog9', sheet: 'dog9', category: 'dog' },
-      { name: 'dog10', sheet: 'dog10', category: 'dog' },
-      { name: 'dog11', sheet: 'dog11', category: 'dog' },
-      { name: 'dog12', sheet: 'dog12', category: 'dog' },
-      { name: 'dog13', sheet: 'dog13', category: 'dog' },
-      { name: 'dog14', sheet: 'dog14', category: 'dog' },
-      { name: 'dog15', sheet: 'dog15', category: 'dog' },
-      { name: 'dog16', sheet: 'dog16', category: 'dog' },
-      { name: 'dog17', sheet: 'dog17', category: 'dog' },
-      { name: 'dog18', sheet: 'dog18', category: 'dog' },
-      { name: 'dog19', sheet: 'dog19', category: 'dog' },
-      { name: 'dog20', sheet: 'dog20', category: 'dog' },
-      // แมว (cat - cat20)
-      { name: 'cat', sheet: 'cat', category: 'cat' },
-      { name: 'cat2', sheet: 'cat2', category: 'cat' },
-      { name: 'cat3', sheet: 'cat3', category: 'cat' },
-      { name: 'cat4', sheet: 'cat4', category: 'cat' },
-      { name: 'cat5', sheet: 'cat5', category: 'cat' },
-      { name: 'cat6', sheet: 'cat6', category: 'cat' },
-      { name: 'cat7', sheet: 'cat7', category: 'cat' },
-      { name: 'cat8', sheet: 'cat8', category: 'cat' },
-      { name: 'cat9', sheet: 'cat9', category: 'cat' },
-      { name: 'cat10', sheet: 'cat10', category: 'cat' },
-      { name: 'cat11', sheet: 'cat11', category: 'cat' },
-      { name: 'cat12', sheet: 'cat12', category: 'cat' },
-      { name: 'cat13', sheet: 'cat13', category: 'cat' },
-      { name: 'cat14', sheet: 'cat14', category: 'cat' },
-      { name: 'cat15', sheet: 'cat15', category: 'cat' },
-      { name: 'cat16', sheet: 'cat16', category: 'cat' },
-      { name: 'cat17', sheet: 'cat17', category: 'cat' },
-      { name: 'cat18', sheet: 'cat18', category: 'cat' },
-      { name: 'cat19', sheet: 'cat19', category: 'cat' },
-      { name: 'cat20', sheet: 'cat20', category: 'cat' },
-      // นก (bird - bird20)
-      { name: 'bird', sheet: 'bird', category: 'bird' },
-      { name: 'bird2', sheet: 'bird2', category: 'bird' },
-      { name: 'bird3', sheet: 'bird3', category: 'bird' },
-      { name: 'bird4', sheet: 'bird4', category: 'bird' },
-      { name: 'bird5', sheet: 'bird5', category: 'bird' },
-      { name: 'bird6', sheet: 'bird6', category: 'bird' },
-      { name: 'bird7', sheet: 'bird7', category: 'bird' },
-      { name: 'bird8', sheet: 'bird8', category: 'bird' },
-      { name: 'bird9', sheet: 'bird9', category: 'bird' },
-      { name: 'bird10', sheet: 'bird10', category: 'bird' },
-      { name: 'bird11', sheet: 'bird11', category: 'bird' },
-      { name: 'bird12', sheet: 'bird12', category: 'bird' },
-      { name: 'bird13', sheet: 'bird13', category: 'bird' },
-      { name: 'bird14', sheet: 'bird14', category: 'bird' },
-      { name: 'bird15', sheet: 'bird15', category: 'bird' },
-      { name: 'bird16', sheet: 'bird16', category: 'bird' },
-      { name: 'bird17', sheet: 'bird17', category: 'bird' },
-      { name: 'bird18', sheet: 'bird18', category: 'bird' },
-      { name: 'bird19', sheet: 'bird19', category: 'bird' },
-      { name: 'bird20', sheet: 'bird20', category: 'bird' },
-      // ปลา (fish - fish20)
-      { name: 'fish', sheet: 'fish', category: 'fish' },
-      { name: 'fish2', sheet: 'fish2', category: 'fish' },
-      { name: 'fish3', sheet: 'fish3', category: 'fish' },
-      { name: 'fish4', sheet: 'fish4', category: 'fish' },
-      { name: 'fish5', sheet: 'fish5', category: 'fish' },
-      { name: 'fish6', sheet: 'fish6', category: 'fish' },
-      { name: 'fish7', sheet: 'fish7', category: 'fish' },
-      { name: 'fish8', sheet: 'fish8', category: 'fish' },
-      { name: 'fish9', sheet: 'fish9', category: 'fish' },
-      { name: 'fish10', sheet: 'fish10', category: 'fish' },
-      { name: 'fish11', sheet: 'fish11', category: 'fish' },
-      { name: 'fish12', sheet: 'fish12', category: 'fish' },
-      { name: 'fish13', sheet: 'fish13', category: 'fish' },
-      { name: 'fish14', sheet: 'fish14', category: 'fish' },
-      { name: 'fish15', sheet: 'fish15', category: 'fish' },
-      { name: 'fish16', sheet: 'fish16', category: 'fish' },
-      { name: 'fish17', sheet: 'fish17', category: 'fish' },
-      { name: 'fish18', sheet: 'fish18', category: 'fish' },
-      { name: 'fish19', sheet: 'fish19', category: 'fish' },
-      { name: 'fish20', sheet: 'fish20', category: 'fish' },
-      // อื่นๆ (other - other20 + อื่นๆ)
-      { name: 'other', sheet: 'other', category: 'other' },
-      { name: 'other2', sheet: 'other2', category: 'other' },
-      { name: 'other3', sheet: 'other3', category: 'other' },
-      { name: 'other4', sheet: 'other4', category: 'other' },
-      { name: 'other5', sheet: 'other5', category: 'other' },
-      { name: 'other6', sheet: 'other6', category: 'other' },
-      { name: 'other7', sheet: 'other7', category: 'other' },
-      { name: 'other8', sheet: 'other8', category: 'other' },
-      { name: 'other9', sheet: 'other9', category: 'other' },
-      { name: 'other10', sheet: 'other10', category: 'other' },
-      { name: 'other11', sheet: 'other11', category: 'other' },
-      { name: 'other12', sheet: 'other12', category: 'other' },
-      { name: 'other13', sheet: 'other13', category: 'other' },
-      { name: 'other14', sheet: 'other14', category: 'other' },
-      { name: 'other15', sheet: 'other15', category: 'other' },
-      { name: 'other16', sheet: 'other16', category: 'other' },
-      { name: 'other17', sheet: 'other17', category: 'other' },
-      { name: 'other18', sheet: 'other18', category: 'other' },
-      { name: 'other19', sheet: 'other19', category: 'other' },
-      { name: 'other20', sheet: 'other20', category: 'other' },
-      { name: 'อื่นๆ', sheet: 'อื่นๆ', category: 'other' }
+      // === 🐕 สุนัข (dog) — Sheet 1 ===
+      { name: 'dog', sheet: 'dog', category: 'dog', sheetId: SHEET_ID_DOG },
+      { name: 'dog2', sheet: 'dog2', category: 'dog', sheetId: SHEET_ID_DOG },
+      { name: 'dog3', sheet: 'dog3', category: 'dog', sheetId: SHEET_ID_DOG },
+      { name: 'dog4', sheet: 'dog4', category: 'dog', sheetId: SHEET_ID_DOG },
+      { name: 'dog5', sheet: 'dog5', category: 'dog', sheetId: SHEET_ID_DOG },
+      { name: 'dog6', sheet: 'dog6', category: 'dog', sheetId: SHEET_ID_DOG },
+      { name: 'dog7', sheet: 'dog7', category: 'dog', sheetId: SHEET_ID_DOG },
+      { name: 'dog8', sheet: 'dog8', category: 'dog', sheetId: SHEET_ID_DOG },
+      { name: 'dog9', sheet: 'dog9', category: 'dog', sheetId: SHEET_ID_DOG },
+      { name: 'dog10', sheet: 'dog10', category: 'dog', sheetId: SHEET_ID_DOG },
+      // === 🐈 แมว (cat) — Sheet 2 ===
+      { name: 'cat', sheet: 'cat', category: 'cat', sheetId: SHEET_ID_CAT },
+      { name: 'cat2', sheet: 'cat2', category: 'cat', sheetId: SHEET_ID_CAT },
+      { name: 'cat3', sheet: 'cat3', category: 'cat', sheetId: SHEET_ID_CAT },
+      { name: 'cat4', sheet: 'cat4', category: 'cat', sheetId: SHEET_ID_CAT },
+      { name: 'cat5', sheet: 'cat5', category: 'cat', sheetId: SHEET_ID_CAT },
+      { name: 'cat6', sheet: 'cat6', category: 'cat', sheetId: SHEET_ID_CAT },
+      { name: 'cat7', sheet: 'cat7', category: 'cat', sheetId: SHEET_ID_CAT },
+      { name: 'cat8', sheet: 'cat8', category: 'cat', sheetId: SHEET_ID_CAT },
+      { name: 'cat9', sheet: 'cat9', category: 'cat', sheetId: SHEET_ID_CAT },
+      { name: 'cat10', sheet: 'cat10', category: 'cat', sheetId: SHEET_ID_CAT },
+      // === 🦜 นก (bird) — Sheet 3 ===
+      { name: 'bird', sheet: 'bird', category: 'bird', sheetId: SHEET_ID_BIRD },
+      { name: 'bird2', sheet: 'bird2', category: 'bird', sheetId: SHEET_ID_BIRD },
+      { name: 'bird3', sheet: 'bird3', category: 'bird', sheetId: SHEET_ID_BIRD },
+      { name: 'bird4', sheet: 'bird4', category: 'bird', sheetId: SHEET_ID_BIRD },
+      { name: 'bird5', sheet: 'bird5', category: 'bird', sheetId: SHEET_ID_BIRD },
+      { name: 'bird6', sheet: 'bird6', category: 'bird', sheetId: SHEET_ID_BIRD },
+      { name: 'bird7', sheet: 'bird7', category: 'bird', sheetId: SHEET_ID_BIRD },
+      { name: 'bird8', sheet: 'bird8', category: 'bird', sheetId: SHEET_ID_BIRD },
+      { name: 'bird9', sheet: 'bird9', category: 'bird', sheetId: SHEET_ID_BIRD },
+      { name: 'bird10', sheet: 'bird10', category: 'bird', sheetId: SHEET_ID_BIRD },
+      // === 🐟 ปลา (fish) — Sheet 4 ===
+      { name: 'fish', sheet: 'fish', category: 'fish', sheetId: SHEET_ID_FISH },
+      { name: 'fish2', sheet: 'fish2', category: 'fish', sheetId: SHEET_ID_FISH },
+      { name: 'fish3', sheet: 'fish3', category: 'fish', sheetId: SHEET_ID_FISH },
+      { name: 'fish4', sheet: 'fish4', category: 'fish', sheetId: SHEET_ID_FISH },
+      { name: 'fish5', sheet: 'fish5', category: 'fish', sheetId: SHEET_ID_FISH },
+      { name: 'fish6', sheet: 'fish6', category: 'fish', sheetId: SHEET_ID_FISH },
+      { name: 'fish7', sheet: 'fish7', category: 'fish', sheetId: SHEET_ID_FISH },
+      { name: 'fish8', sheet: 'fish8', category: 'fish', sheetId: SHEET_ID_FISH },
+      { name: 'fish9', sheet: 'fish9', category: 'fish', sheetId: SHEET_ID_FISH },
+      { name: 'fish10', sheet: 'fish10', category: 'fish', sheetId: SHEET_ID_FISH },
+      // === 📦 อื่นๆ (other) — Sheet 5 ===
+      { name: 'other', sheet: 'other', category: 'other', sheetId: SHEET_ID_OTHER },
+      { name: 'other2', sheet: 'other2', category: 'other', sheetId: SHEET_ID_OTHER },
+      { name: 'other3', sheet: 'other3', category: 'other', sheetId: SHEET_ID_OTHER },
+      { name: 'other4', sheet: 'other4', category: 'other', sheetId: SHEET_ID_OTHER },
+      { name: 'other5', sheet: 'other5', category: 'other', sheetId: SHEET_ID_OTHER },
+      { name: 'other6', sheet: 'other6', category: 'other', sheetId: SHEET_ID_OTHER },
+      { name: 'other7', sheet: 'other7', category: 'other', sheetId: SHEET_ID_OTHER },
+      { name: 'other8', sheet: 'other8', category: 'other', sheetId: SHEET_ID_OTHER },
+      { name: 'other9', sheet: 'other9', category: 'other', sheetId: SHEET_ID_OTHER },
+      { name: 'other10', sheet: 'other10', category: 'other', sheetId: SHEET_ID_OTHER },
     ];
 
     // ฟังก์ชันแปลง CSV เป็น Array
@@ -2404,65 +2363,59 @@
       return rows;
     }
 
-    // ฟังก์ชันดึงชื่อสินค้าจากลิงก์ Lazada
-    function extractTitleFromLink(link) {
+    // ฟังก์ชันดึงชื่อสินค้าจากลิงก์ Lazada อัตโนมัติ
+    function extractTitleFromLink(link, category) {
       if (!link || !link.includes('lazada')) return '';
+      const catNames = { dog: 'อาหารสัตว์เลี้ยง', cat: 'อาหารแมว', bird: 'อาหารนก', fish: 'อาหารปลา', other: 'สินค้าเลี้ยงสัตว์' };
 
       try {
-        let urlString = link;
-        if (!link.startsWith('http')) {
-          urlString = 'https://' + link;
-        }
-
+        let urlString = link.startsWith('http') ? link : 'https://' + link;
         const url = new URL(urlString);
-        // กรณีเป็นลิงก์ affiliate (c.lazada...) จะมี query param url=... (ลิงก์สินค้าจริง)
         const qp = new URLSearchParams(url.search);
         const embeddedUrl = qp.get('url');
         const targetUrl = embeddedUrl && embeddedUrl.startsWith('http') ? new URL(embeddedUrl) : url;
         const pathname = targetUrl.pathname;
-
-        // ลองดึงจาก query parameter clickTrackInfo
         const queryParams = new URLSearchParams(targetUrl.search);
-        const clickTrackInfo = queryParams.get('clickTrackInfo');
 
+        // 1) ลองดึงจาก clickTrackInfo → query param (ชื่อสินค้าที่ค้นหา)
+        const clickTrackInfo = queryParams.get('clickTrackInfo');
         if (clickTrackInfo) {
           try {
             const decoded = decodeURIComponent(clickTrackInfo);
-            // หา query parameter
-            const queryMatch = decoded.match(/query[%:]3D([^%&]+)/i);
+            const queryMatch = decoded.match(/query%3D([^%&;]+)/i) || decoded.match(/query:([^;,&]+)/i);
             if (queryMatch) {
-              let title = decodeURIComponent(queryMatch[1].replace(/\+/g, ' '));
-              // ทำความสะอาดชื่อ
+              let title = decodeURIComponent(queryMatch[1].replace(/\+/g, ' ')).trim();
               title = title.replace(/pdp-i\d+-s\d+/gi, '').trim();
               if (title.length > 3) return title;
             }
-          } catch (e) {
-            // ถ้า decode ไม่ได้ ข้ามไป
-          }
+          } catch (e) { }
         }
 
-        // ลองดึงจาก pathname
+        // 2) ลองดึงชื่อจาก slug ใน pathname เช่น /products/royal-canin-adult-i1234-s5678.html
         if (pathname.includes('/products/')) {
-          const parts = pathname.split('/');
-          const lastPart = parts[parts.length - 1];
+          const lastPart = pathname.split('/').pop();
           if (lastPart && lastPart.includes('.html')) {
-            // ลบ .html และ pdp-iXXX-sXXX
-            let title = lastPart
+            // ตัด .html และ -iXXX-sXXX ออก แล้วแปลง - เป็นช่องว่าง
+            let slug = lastPart
               .replace(/\.html$/i, '')
-              .replace(/pdp-i\d+-s\d+/gi, '')
+              .replace(/-i\d+(-s\d+)?$/i, '')   // ตัด -i1234-s567 ท้ายออก
+              .replace(/pdp-/gi, '')
               .replace(/-/g, ' ')
               .trim();
-            if (title.length > 3) return title;
+            if (slug.length > 3) return slug;
           }
         }
-        // ถ้ายังไม่ได้จริง ๆ ใช้เลขสินค้าแทน
-        const idMatch = pathname.match(/pdp-i(\d+)-s(\d+)/i);
-        if (idMatch) return `Lazada #${idMatch[1]}`;
 
-        // ถ้ายังไม่มี ให้ใช้ default
-        return 'สินค้าจาก Lazada';
+        // 3) ถ้า path แบบ pdp-iXXXX.html เปล่า → ใช้ชื่อหมวดหมู่ + รหัสสินค้า
+        const idMatch = pathname.match(/pdp-i(\d+)/i) || pathname.match(/i(\d{7,})/i);
+        if (idMatch) {
+          const catLabel = catNames[category] || 'สินค้าสัตว์เลี้ยง';
+          return `${catLabel} #${idMatch[1]}`;
+        }
+
+        return catNames[category] || 'สินค้าจาก Lazada';
       } catch (e) {
-        return 'สินค้าจาก Lazada';
+        return catNames[category] || 'สินค้าจาก Lazada';
       }
     }
 
@@ -2470,15 +2423,17 @@
     async function loadProductsFromSingleSheet(sheetConfig) {
       try {
         const sheetName = sheetConfig.sheet || sheetConfig.name;
+        // ใช้ sheetId จาก config (รองรับหลาย Spreadsheet)
+        const sid = sheetConfig.sheetId || SHEET_ID_DOG;
 
         // ใช้ gviz โดยอ้างอิงชื่อชีท (ไม่ต้องรู้ gid)
-        const GVIZ_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(sheetName)}`;
+        const GVIZ_URL = `https://docs.google.com/spreadsheets/d/${sid}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(sheetName)}`;
         let response = await fetch(GVIZ_URL);
 
         if (!response.ok) {
           // fallback: ถ้า config มี gid (optional) ค่อยลอง export แบบ gid
           if (sheetConfig.gid && sheetConfig.gid !== '0') {
-            const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${sheetConfig.gid}`;
+            const CSV_URL = `https://docs.google.com/spreadsheets/d/${sid}/export?format=csv&gid=${sheetConfig.gid}`;
             response = await fetch(CSV_URL);
           }
           if (!response.ok) {
@@ -2518,9 +2473,9 @@
             fullLink = 'https://' + fullLink.replace(/^\/+/, '');
           }
 
-          // ถ้ายังไม่มีชื่อ ให้พยายามดึงจากลิงก์
+          // ถ้ายังไม่มีชื่อ ให้พยายามดึงจากลิงก์ (พร้อมส่ง category เพื่อ fallback ชื่อที่สวยงาม)
           if (!title || title.toLowerCase().includes('root link') || title.toLowerCase().includes('ลิ้ง')) {
-            title = extractTitleFromLink(fullLink);
+            title = extractTitleFromLink(fullLink, sheetConfig.category);
           }
 
           if (!title) title = `สินค้า ${sheetConfig.category}`;
@@ -2552,9 +2507,36 @@
         const promises = SHEET_CONFIGS.map(config => loadProductsFromSingleSheet(config));
         const results = await Promise.all(promises);
 
-        // รวมข้อมูลทั้งหมด
+        // รวมข้อมูลทั้งหมด พร้อมกรองสินค้าซ้ำ
+        const seenKeys = new Set();
+
         results.forEach(products => {
           products.forEach(product => {
+            // สร้าง key สำหรับเช็คซ้ำ: ใช้ link หลัก (ตัด query string ออก เพื่อจับ near-duplicate)
+            // ถ้า link เหมือนกันเป๊ะ หรือ path เหมือนกัน → ถือว่าซ้ำ
+            let dupKey = product.link;
+            try {
+              const u = new URL(product.link);
+              // ลองดึง url= param (affiliate link) ถ้ามี
+              const innerUrl = u.searchParams.get('url');
+              if (innerUrl) {
+                try {
+                  const iu = new URL(innerUrl);
+                  // ใช้เฉพาะ pathname (ตัด query params ที่เปลี่ยนทุกครั้งออก)
+                  dupKey = iu.hostname + iu.pathname;
+                } catch {
+                  dupKey = innerUrl.split('?')[0];
+                }
+              } else {
+                dupKey = u.hostname + u.pathname;
+              }
+            } catch {
+              dupKey = product.link.split('?')[0];
+            }
+
+            if (seenKeys.has(dupKey)) return; // ข้ามสินค้าซ้ำ
+            seenKeys.add(dupKey);
+
             allProducts.push({
               id: id++,
               ...product,
@@ -2638,7 +2620,7 @@
         card.innerHTML = `
       ${badgeHTML}
       <a href="${p.link}" target="_blank" rel="noopener noreferrer sponsored" class="product-img-link">
-        <div class="product-img-wrap"><img src="${p.image}" alt="${p.title}" loading="lazy" /></div>
+        <div class="product-img-wrap"><img src="${p.image}" alt="${p.title}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/300x300/1a3a2a/C4A265?text=🐾+${encodeURIComponent(p.title.substring(0, 12))}'" /></div>
       </a>
       <div class="product-body">
         <div class="product-cat">${getCatLabel(p.category)}</div>
