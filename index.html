@@ -3086,6 +3086,179 @@
       });
     })();
   </script>
+
+  <!-- Promo popup (show on first load) -->
+  <style>
+    #promoOverlay{
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      background: rgba(0,0,0,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease;
+    }
+    #promoOverlay.show{
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #promoModal{
+      width: min(680px, 100%);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.18));
+      box-shadow: 0 20px 70px rgba(0,0,0,0.55);
+      position: relative;
+      overflow: hidden;
+    }
+    #promoModal::before{
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: radial-gradient(circle at 20% 10%, rgba(255,220,130,0.35), transparent 45%),
+                  radial-gradient(circle at 80% 30%, rgba(90,210,160,0.30), transparent 50%),
+                  radial-gradient(circle at 50% 90%, rgba(120,160,255,0.25), transparent 55%);
+      pointer-events: none;
+    }
+    #promoContent{
+      position: relative;
+      padding: 22px 20px 18px;
+    }
+    #promoTitle{
+      margin: 0 48px 8px 0;
+      font-size: 1.15rem;
+      color: #fff;
+      letter-spacing: .2px;
+      text-align: left;
+      font-weight: 800;
+    }
+    #promoText{
+      margin: 0 0 14px 0;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      text-align: left;
+      font-size: .98rem;
+    }
+    #promoActions{
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    #promoCta{
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      background: linear-gradient(90deg, rgba(255,209,105,0.95), rgba(255,156,75,0.95));
+      color: #1b1205;
+      box-shadow: 0 10px 30px rgba(255,170,60,0.25);
+    }
+    #promoCta:hover{ filter: brightness(1.02); }
+
+    #promoSiteBtn{
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-weight: 800;
+      background: linear-gradient(90deg, rgba(140,210,255,0.95), rgba(60,170,255,0.95));
+      color: #06121b;
+      box-shadow: 0 10px 30px rgba(60,170,255,0.20);
+    }
+    #promoSiteBtn:hover{ filter: brightness(1.02); }
+    #promoClose{
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(0,0,0,0.35);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
+    }
+    #promoClose:hover{ background: rgba(0,0,0,0.5); }
+
+    @media (prefers-reduced-motion: reduce){
+      #promoOverlay{ transition: none; }
+    }
+  </style>
+
+  <div id="promoOverlay" aria-hidden="true">
+    <div id="promoModal" role="dialog" aria-modal="true" aria-label="Promo popup">
+      <button id="promoClose" type="button" aria-label="Close popup">×</button>
+      <div id="promoContent">
+        <h2 id="promoTitle">ขอเชิญชมสินค้าอาหารสัตว์เลี้ยงได้ที่นี่</h2>
+        <p id="promoText">ต้องการดูสินค้าต่อ หรือจะปิดแล้วกลับไปที่หน้าเว็บของเรา</p>
+        <div id="promoActions">
+          <button id="promoCta" type="button">ชมสินค้า</button>
+          <button id="promoSiteBtn" type="button">เข้าสู่เว็บไซต์</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const OVERLAY_ID = 'promoOverlay';
+      const CLOSE_ID = 'promoClose';
+      const CTA_ID = 'promoCta';
+      const SITE_BTN_ID = 'promoSiteBtn';
+      const storageKey = 'promoPopupDismissed_v1';
+      const url = 'https://c.lazada.co.th/t/c.bVsAJ6?url=https://www.lazada.co.th/products/pdp-i5790720741-s24654967357.html?c=&channelLpJumpArgs=&clickTrackInfo=query%253Awildology%253Bnid%253A5790720741%253Bsrc%253ALazadaMainSrp%253Brn%253Ae3fce0d82877c98e5887ad3732fba5be%253Bregion%253Ath%253Bsku%253A5790720741_TH%253Bprice%253A2398%253Bclient%253Adesktop%253Bsupplier_id%253A100211076589%253Bsession_id%253A%253Bbiz_source%253Ah5_internal%253Bslot%253A1%253Butlog_bucket_id%253A470687%253Basc_category_id%253A3725%253Bitem_id%253A5790720741%253Bsku_id%253A24654967357%253Bshop_id%253A3220349%253BtemplateInfo%253A107882_E%2523-1_A3_C%2523&freeshipping=1&fs_ab=2&fuse_fs=&lang=th&location=%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B8%B2&price=2398&priceCompare=skuId%3A24654967357%3Bsource%3Alazada-search-voucher%3Bsn%3Ae3fce0d82877c98e5887ad3732fba5be&ratingscore=5.0&request_id=e3fce0d82877c98e5887ad3732fba5be&review=47&sale=90&search=1&source=search&spm=a2o4m.searchlist.list.1&stock=1';
+
+      const overlay = document.getElementById(OVERLAY_ID);
+      const closeBtn = document.getElementById(CLOSE_ID);
+      const ctaBtn = document.getElementById(CTA_ID);
+      const siteBtn = document.getElementById(SITE_BTN_ID);
+      if(!overlay || !closeBtn || !ctaBtn || !siteBtn) return;
+
+      function dismiss(){
+        overlay.classList.remove('show');
+        overlay.setAttribute('aria-hidden', 'true');
+        try { localStorage.setItem(storageKey, '1'); } catch (e) {}
+      }
+
+      function show(){
+        overlay.classList.add('show');
+        overlay.setAttribute('aria-hidden', 'false');
+      }
+
+      // สร้างความนุ่มนวล: แสดงหลังหน้าโหลดเสร็จเล็กน้อย
+      document.addEventListener('DOMContentLoaded', () => {
+        try{
+          if(localStorage.getItem(storageKey) === '1') return;
+        }catch(e){}
+        setTimeout(show, 450);
+      });
+
+      closeBtn.addEventListener('click', dismiss);
+      overlay.addEventListener('click', (e) => {
+        if(e.target === overlay) dismiss(); // กดพื้นหลัง = ปิด
+      });
+      ctaBtn.addEventListener('click', () => {
+        window.location.href = url;
+      });
+      siteBtn.addEventListener('click', () => {
+        dismiss();
+        try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) {}
+      });
+    })();
+  </script>
 </body>
 
 </html>
