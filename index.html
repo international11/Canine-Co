@@ -3001,6 +3001,91 @@
       spawnLeaves(6);
     });
   </script>
+
+  <!-- Music toggle (Udio iframe enable/disable) -->
+  <style>
+    #musicToggleBtn{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35);
+      background: rgba(0,0,0,0.55);
+      color: #fff;
+      cursor: pointer;
+      z-index: 99999;
+      backdrop-filter: blur(6px);
+      font-size: 20px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+    #musicToggleBtn:hover{ background: rgba(0,0,0,0.72); }
+
+    #udioWrap{
+      position: fixed;
+      right: 16px;
+      bottom: 76px;
+      z-index: 99998;
+      max-width: calc(100vw - 32px);
+    }
+    #udioFrame{
+      width: 700px;
+      height: 228px;
+      border-radius: 12px;
+      border: 0;
+      max-width: calc(100vw - 32px);
+    }
+  </style>
+
+  <button id="musicToggleBtn" type="button" aria-label="Toggle music" aria-pressed="false">🔇</button>
+
+  <div id="udioWrap" hidden>
+    <iframe
+      id="udioFrame"
+      title="Udio Music"
+      src="about:blank"
+      data-src="https://www.udio.com/embed/rAT8X7SQkuvHz8CaTY5Pm2?embedVariant=default&utm_source=generator"
+      loading="lazy"
+      allow="autoplay; encrypted-media"
+    ></iframe>
+  </div>
+
+  <script>
+    (function(){
+      const btn = document.getElementById('musicToggleBtn');
+      const wrap = document.getElementById('udioWrap');
+      const iframe = document.getElementById('udioFrame');
+      if(!btn || !wrap || !iframe) return;
+
+      const udioSrc = iframe.getAttribute('data-src');
+
+      function setEnabled(enabled){
+        if(enabled){
+          wrap.hidden = false;
+          iframe.src = udioSrc; // เปิด: โหลด iframe => ให้เพลงเริ่มตามที่ Udio อนุญาต
+          btn.textContent = '🔊';
+          btn.setAttribute('aria-pressed', 'true');
+        }else{
+          iframe.src = 'about:blank'; // ปิด: เอา iframe ออกจากแหล่งที่มาเพื่อหยุดเสียง
+          wrap.hidden = true;
+          btn.textContent = '🔇';
+          btn.setAttribute('aria-pressed', 'false');
+        }
+      }
+
+      // เริ่มต้นให้ปิดก่อน
+      setEnabled(false);
+
+      btn.addEventListener('click', () => {
+        setEnabled(wrap.hidden);
+      });
+    })();
+  </script>
 </body>
 
 </html>
